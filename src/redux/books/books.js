@@ -3,7 +3,26 @@ const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 const GET_BOOKS = 'bookstore/books/SET_ALL_BOOKS';
 
 const initialState = {
-  books: [],
+  books: [
+    {
+      item_id: 'item1',
+      title: 'The Great Gatsby',
+      author: 'John Smith',
+      category: 'Fiction',
+    },
+    {
+      item_id: 'item2',
+      title: 'Anna Karenina',
+      author: 'Leo Tolstoy',
+      category: 'Fiction',
+    },
+    {
+      item_id: 'item3',
+      title: 'The Selfish Gene',
+      author: 'Richard Dawkins',
+      category: 'Nonfiction',
+    },
+  ],
 };
 /* eslint-disable */
 const booksReducer = (state = initialState, action) => {
