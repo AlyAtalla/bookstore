@@ -1,19 +1,35 @@
-import './App.css';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable no-unused-vars */
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import BookList from './components/BookList';
-import Categories from './components/Categories';
-import Navigation from './components/Navigation';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+import { Provider } from 'react-redux';
+import Navbar from './components/Navbar';
+import BooksPage from './containers/BooksPage';
+import Categories from './containers/Categories';
+import store from './redux/createState';
+import './index.css';
+import './app.scss';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<BookList />} />
-        <Route path="/categories" element={<Categories />} />
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <Router>
+        <div className="container d-flex flex-column justify-center align-center">
+          <div className="content-container d-flex flex-column justify-center align-center">
+            <Navbar />
+            <Routes>
+              <Route path="/categories" element={<Categories />} />
+              <Route exact path="/" element={<BooksPage />} />
+            </Routes>
+          </div>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
