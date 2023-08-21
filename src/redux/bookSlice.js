@@ -25,12 +25,8 @@ const bookSlice = createSlice({
   name: 'book',
   initialState,
   reducers: {
-    addBook: (state, action) => {
-      state.push(action.payload); // Use push to add a book to the array
-    },
-    removeBook: (state, action) => {
-      return state.filter((book) => book.item_id !== action.payload);
-    },
+    addBook: (state, action) => state.concat(action.payload),
+    removeBook: (state, action) => state.filter((book) => book.item_id !== action.payload),
   },
 });
 
