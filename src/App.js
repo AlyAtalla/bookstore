@@ -4,29 +4,23 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import { Provider } from 'react-redux';
 import Navbar from './components/Navbar';
 import BooksPage from './containers/BooksPage';
 import Categories from './containers/Categories';
-import store from './redux/createState';
-import './index.css';
-import './app.scss';
 
 function App() {
   return (
-    <Provider store={store}>
-      <Router>
-        <div className="container d-flex flex-column justify-center align-center">
-          <div className="content-container d-flex flex-column justify-center align-center">
-            <Navbar />
-            <Routes>
-              <Route path="/categories" element={<Categories />} />
-              <Route exact path="/" element={<BooksPage />} />
-            </Routes>
-          </div>
+    <Router>
+      <div className="container d-flex flex-column justify-center align-center">
+        <div className="content-container d-flex flex-column justify-center align-center">
+          <Navbar />
+          <Routes>
+            <Route path="/categories" element={<Categories />} />
+            <Route exact path="/" element={<BooksPage />} />
+          </Routes>
         </div>
-      </Router>
-    </Provider>
+      </div>
+    </Router>
   );
 }
 
