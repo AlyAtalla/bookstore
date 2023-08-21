@@ -1,5 +1,3 @@
-/* eslint-disable */
-/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -37,4 +35,3 @@ const BookList = () => {
 };
 
 export default BookList;
-/* eslint-enable */

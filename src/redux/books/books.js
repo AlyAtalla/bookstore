@@ -24,7 +24,6 @@ const initialState = {
     },
   ],
 };
-/* eslint-disable */
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_BOOKS:
@@ -37,7 +36,7 @@ const booksReducer = (state = initialState, action) => {
       return state;
   }
 };
-/* eslint-enable */
+
 export const getBooks = (payload) => ({
   type: GET_BOOKS,
   payload,
