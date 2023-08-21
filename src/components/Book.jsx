@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import BookstoreAPI from '../services/BookstoreAPI';
 
 const Book = ({
   id, category, title, author, currentChapter, totalChapters,
