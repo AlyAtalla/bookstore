@@ -13,9 +13,9 @@ const bookSlice = createSlice({
     // ...
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchBooks.fulfilled, (state, action) =>
-      action.payload,);
+    builder.addCase(fetchBooks.fulfilled, (state, action) => action.payload);
   },
 });
 
 export default bookSlice.reducer;
+
