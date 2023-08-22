@@ -1,34 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import BookstoreAPI from '../services/BookstoreAPI';
 
-const initialState = [
-  {
-    item_id: 'item1',
-    title: 'The Great Gatsby',
-    author: 'John Smith',
-    category: 'Fiction',
-  },
-  {
-    item_id: 'item2',
-    title: 'Anna Karenina',
-    author: 'Leo Tolstoy',
-    category: 'Fiction',
-  },
-  {
-    item_id: 'item3',
-    title: 'The Selfish Gene',
-    author: 'Richard Dawkins',
-    category: 'Nonfiction',
-  },
-];
+export const fetchBooks = createAsyncThunk('book/fetchBooks', async () => {
+  const response = await BookstoreAPI.getAllBooksFromAPI();
+  return response.data;
+});
 
 const bookSlice = createSlice({
   name: 'book',
-  initialState,
+  initialState: [], // Change the initial state to an empty array
   reducers: {
-    addBook: (state, action) => state.concat(action.payload),
-    removeBook: (state, action) => state.filter((book) => book.item_id !== action.payload),
+    // ...
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchBooks.fulfilled, (state, action) => action.payload);
   },
 });
 
-export const { addBook, removeBook } = bookSlice.actions;
 export default bookSlice.reducer;

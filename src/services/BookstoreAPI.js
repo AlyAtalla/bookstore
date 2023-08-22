@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import axios from 'axios';
 import { getBooks, addBook, removeBook } from '../redux/books/books';
 
