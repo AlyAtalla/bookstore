@@ -60,7 +60,7 @@ ul {
 }
 
 .nav-bar {
-  background-color: rgba(255, 255, 255, 0.745);
+  background-color: rgb(255, 255, 255);
   width: 100%;
   padding: 2em 5em 0 5em;
   border-bottom: solid 1px #e8e8e8;
@@ -163,6 +163,7 @@ select {
 
 .book-title {
   font-size: 1.375rem;
+  margin-top: 0px;
 }
 
 .book-author {
@@ -173,7 +174,8 @@ select {
 
 .book-category {
   font-size: 0.9em;
-  color: #121212;
+  color:rgba(15, 16, 18, 0.444);
+  margin-bottom: 0px;
 }
 
 .book-info,
