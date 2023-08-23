@@ -11,7 +11,7 @@ import Categories from './containers/Categories';
 function App() {
   return (
     <Router>
-      <div className="container d-flex flex-column justify-center align-center">
+      <div className="container  flex-column justify-center align-center">
         <div className="content-container d-flex flex-column justify-center align-center">
           <Navbar />
           <Routes>
