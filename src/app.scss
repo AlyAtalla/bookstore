@@ -82,7 +82,9 @@ ul {
       a {
         text-decoration: none;
         color: #121212;
-        opacity: 0.5;
+        &:contains('Categories') {
+          opacity: 0.5;
+        }
         font-weight: normal;
       }
     }
